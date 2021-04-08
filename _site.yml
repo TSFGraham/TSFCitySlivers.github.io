@@ -1,6 +1,6 @@
-name: "my-website"
+name: "City of Nevada City, City Slivers Project"
 navbar:
-  title: "My Website"
+  title: "Nevada City Sliver Program"
   left:
     - text: "Home"
       href: index.html

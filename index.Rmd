@@ -1,25 +1,34 @@
 ---
-title: "Nevada City, City Slivers"
+title: "Nevada City, City Slivers Program"
 
 ---
 
 
-## R Markdown
+This is a map depicting the City of Nevada City owned parcels and "Slivers". The City Sliver Program is aimed to identify, characterize, promote stewardship, track status and complete management practices to reduce both fuel density and fire risk for each "Sliver".
+This website and program was a combination of efforts from the City of Nevada City, The Sierra Fund, California State University, Chico and Volunteers. For more information contact ...
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r City Sliver Map, echo=FALSE, message=FALSE}
+library(mapview)
+library(dplyr)
+library(sf)
+library(sp)
+library(leaflet)
+library(leafpop)
+library(leafem)
+library(raster)
+library(rgdal)
+library(readr)
+library(usethis)
+
+CitySlivers<-st_read("C:/Users/Nicholas Graham/Desktop/TSFCitySlivers.github.io/Data/City_Sliver.shp")
+NC_Parcels<-st_read("C:/Users/Nicholas Graham/Desktop/TSFCitySlivers.github.io/Data/NC_Parcels.shp")
+
+
+mapview(CitySlivers, layer.name = "City Slivers", lwd = 1.5, zcol = "TreatStat", label="Name")+mapview(NC_Parcels, layer.name = "Nevada City Owned Parcels", col.regions = "White", Fill=NA, lwd = 1.5, alpha.regions = .2, label="APN") 
+
 ```
 
-## Including Plots
+Created with RMarkdown `r getRversion()` and hosted through Github
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
