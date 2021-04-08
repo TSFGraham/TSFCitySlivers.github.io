@@ -30,5 +30,5 @@ mapview(CitySlivers, layer.name = "City Slivers", lwd = 1.5, zcol = "TreatStat",
 
 ```
 
-Created with RMarkdown `r getRversion()` and hosted through Github
+Created with RMarkdown `r getRversion()` and hosted through Github.
 
