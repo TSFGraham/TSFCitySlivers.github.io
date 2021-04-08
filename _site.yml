@@ -6,6 +6,5 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-  output: cosmo
 output_dir: "."
   
