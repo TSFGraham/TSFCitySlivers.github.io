@@ -1,8 +1,6 @@
 ---
 title: "Nevada City, City Slivers"
-author: "N.Graham"
-date: "April 4th 2021"
-output: html_document
+
 ---
 
 
