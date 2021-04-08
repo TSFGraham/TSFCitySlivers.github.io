@@ -6,6 +6,7 @@ title: "Nevada City, City Slivers Program"
 
 This is a map depicting the City of Nevada City owned parcels and "Slivers". The City Sliver Program is aimed to identify, characterize, promote stewardship, track status and complete management practices to reduce both fuel density and fire risk for each "Sliver".
 This website and program was a combination of efforts from the City of Nevada City, The Sierra Fund, California State University, Chico and Volunteers. For more information contact ...
+
 ```{r include=FALSE, echo=FALSE}
 library(mapview)
 library(dplyr)
