@@ -18,6 +18,7 @@ library(raster)
 library(rgdal)
 library(readr)
 library(usethis)
+library(prettydoc)
 
 ```
 
