@@ -6,10 +6,7 @@ title: "Nevada City, City Slivers Program"
 
 This is a map depicting the City of Nevada City owned parcels and "Slivers". The City Sliver Program is aimed to identify, characterize, promote stewardship, track status and complete management practices to reduce both fuel density and fire risk for each "Sliver".
 This website and program was a combination of efforts from the City of Nevada City, The Sierra Fund, California State University, Chico and Volunteers. For more information contact ...
-
-
-
-```{r City Sliver Map, echo=FALSE, message=FALSE}
+```{r include=FALSE, echo=FALSE}
 library(mapview)
 library(dplyr)
 library(sf)
@@ -22,13 +19,19 @@ library(rgdal)
 library(readr)
 library(usethis)
 
+```
+
+```{r, read-in-data, include=FALSE}
 CitySlivers<-st_read("C:/Users/Nicholas Graham/Desktop/TSFCitySlivers.github.io/Data/City_Sliver.shp")
 NC_Parcels<-st_read("C:/Users/Nicholas Graham/Desktop/TSFCitySlivers.github.io/Data/NC_Parcels.shp")
+```
 
+
+```{r, City-Sliver-Map, echo=FALSE, fig.height=8, fig.width=10, message=FALSE}
 
 mapview(CitySlivers, layer.name = "City Slivers", lwd = 1.5, zcol = "TreatStat", label="Name")+mapview(NC_Parcels, layer.name = "Nevada City Owned Parcels", col.regions = "White", Fill=NA, lwd = 1.5, alpha.regions = .2, label="APN") 
 
 ```
 
-Created with RMarkdown `r getRversion()` and hosted through Github.
+This website was Created with RMarkdown in RStudio version `r getRversion()` and hosted through Github Pages.
 
