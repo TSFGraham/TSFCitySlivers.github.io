@@ -20,6 +20,7 @@ library(rgdal)
 library(readr)
 library(usethis)
 library(prettydoc)
+library(leafsync)
 
 ```
 
@@ -29,10 +30,12 @@ NC_Parcels<-st_read("C:/Users/Nicholas Graham/Desktop/TSFCitySlivers.github.io/D
 ```
 
 
-```{r, City-Sliver-Map, echo=FALSE, fig.height=8, fig.width=10, message=FALSE}
+```{r, City-Sliver-Map, echo=FALSE, fig.height=10, fig.width=10, message=FALSE}
 
-mapview(CitySlivers, layer.name = "City Slivers", lwd = 1.5, zcol = "TreatStat", label="Name")+mapview(NC_Parcels, layer.name = "Nevada City Owned Parcels", col.regions = "White", Fill=NA, lwd = 1.5, alpha.regions = .2, label="APN") 
+m1<-mapview(CitySlivers, layer.name = "City Slivers", lwd = 1.5, zcol = "TreatStat", label="Name")
+m2<-mapview(NC_Parcels, layer.name = "Nevada City Owned Parcels", alpha = 1, col.regions="black", lwd = 1.5, alpha.regions = 0, label="APN") 
 
+sync(list(m1,m2),ncol = 1)
 ```
 
 This website was Created with RMarkdown in RStudio version `r getRversion()` and hosted through Github Pages.
